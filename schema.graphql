@@ -1,0 +1,9 @@
+type ProfileMinted @entity(immutable: true) {
+  id: Bytes!
+  profileAddress: Bytes! # address
+  owner: Bytes! # address
+  uri: String! # string
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
