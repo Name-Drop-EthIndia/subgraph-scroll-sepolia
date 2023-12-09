@@ -1,6 +1,6 @@
 specVersion: 0.0.5
 schema:
-  file: ./schema.graphql
+  file: schema.graphql
 dataSources:
   - kind: ethereum
     name: ProfileFactory
@@ -18,11 +18,11 @@ dataSources:
         - Moment
       abis:
         - name: ProfileFactory
-          file: ./abis/ProfileFactory.json
+          file: ProfileFactory/abis/ProfileFactory.json
       eventHandlers:
         - event: ProfileMinted(indexed address,indexed address,indexed string)
           handler: handleProfileMinted
-      file: ./src/profile-factory.ts
+      file: ProfileFactory/ProfileFactory.wasm
 templates:
   - kind: ethereum
     name: ProfileNft
@@ -38,8 +38,8 @@ templates:
         - Moment
       abis:
         - name: ProfileNft
-          file: ./abis/ProfileNft.json
+          file: ProfileNft/abis/ProfileNft.json
       eventHandlers:
         - event: MomentMinted(indexed address,indexed uint256,indexed uint256)
           handler: handleMomentMinted
-      file: ./src/profile-factory.ts
+      file: ProfileFactory/ProfileFactory.wasm
